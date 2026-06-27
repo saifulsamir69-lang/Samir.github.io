@@ -100,6 +100,44 @@ box-shadow:0 0 20px #8a00ff;
 .share-btn:active{
     transform:scale(0.95);
 }
+#loading-screen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#120018;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.loader-content{
+    text-align:center;
+}
+
+.loader-profile{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:5px solid #a100ff;
+    box-shadow:0 0 25px #a100ff;
+    animation:spin 2s linear infinite;
+}
+
+#loader-text{
+    margin-top:20px;
+    color:#d46cff;
+    font-size:30px;
+    font-weight:bold;
+    text-shadow:0 0 15px #a100ff;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
 </style>
 </head>
 
