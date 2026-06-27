@@ -123,6 +123,8 @@ box-shadow:0 0 20px #8a00ff;
     border-radius:50%;
     border:5px solid #a100ff;
     box-shadow:0 0 25px #a100ff;
+    position: relative;
+    z-index: 1;
 }
 
 #loader-text{
@@ -131,6 +133,24 @@ box-shadow:0 0 20px #8a00ff;
     font-size:30px;
     font-weight:bold;
     text-shadow:0 0 15px #a100ff;
+}
+.loader-box{
+    position:relative;
+    width:150px;
+    height:150px;
+    margin:auto;
+}
+.loader-box::before{
+    content:"";
+    position:absolute;
+    top:-5px;
+    left:-5px;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:conic-gradient(#a100ff,transparent,#a100ff);
+    animation:spin 2s linear infinite;
+    z-index:0;
 }
 
 @keyframes spin{
@@ -142,11 +162,12 @@ box-shadow:0 0 20px #8a00ff;
 
 <body>
 
-<div id="loading-screen">
-    <div class="loader-content">
+<div class="loader-content">
+    <div class="loader-box">
         <img src="BeautyPlus_20260406174436591_save.jpg" class="loader-profile">
-        <h2 id="loader-text"></h2>
     </div>
+
+    <h2 id="loader-text"></h2>
 </div>
 
 <div class="container">
